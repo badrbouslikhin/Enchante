@@ -1,0 +1,5 @@
+Removed Pin From Net: NetName=LED9 Pin=U2-15
+Added Pin To Net: NetName=LED9 Pin=U2-14
+Change Net Name : Old Net Name=CAP0.2 New Net Name=CAP0.3
+Added Pin To Net: NetName=CAP1.3 Pin=U2-15
+Added Net: Name=CAP1.3
