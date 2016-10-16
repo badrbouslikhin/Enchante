@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=NetAN1_AC1 Pin=AN1-AC0
+Removed Pin From Net: NetName=NetAN1_AC0 Pin=AN1-AC1
+Added Pin To Net: NetName=NetAN1_AC0 Pin=AN1-AC0
+Added Pin To Net: NetName=NetAN1_AC1 Pin=AN1-AC1

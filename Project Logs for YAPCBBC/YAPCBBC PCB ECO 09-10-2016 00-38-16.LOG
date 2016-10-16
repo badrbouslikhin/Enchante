@@ -1,0 +1,27 @@
+Added Component: Designator=U2(RGE24_N)
+Added Pin To Net: NetName=SBWTDIO_RST Pin=U2-1
+Added Pin To Net: NetName=SBWTCK Pin=U2-2
+Added Pin To Net: NetName=LED3 Pin=U2-3
+Added Pin To Net: NetName=LED4 Pin=U2-4
+Added Pin To Net: NetName=LED5 Pin=U2-5
+Added Pin To Net: NetName=LED6 Pin=U2-6
+Added Pin To Net: NetName=LED1 Pin=U2-7
+Added Pin To Net: NetName=LED2 Pin=U2-8
+Added Pin To Net: NetName=I2C_SDA Pin=U2-9
+Added Pin To Net: NetName=I2C_SCL Pin=U2-10
+Added Pin To Net: NetName=LED7 Pin=U2-11
+Added Pin To Net: NetName=LED8 Pin=U2-12
+Added Pin To Net: NetName=CAP0.3 Pin=U2-13
+Added Pin To Net: NetName=LED9 Pin=U2-14
+Added Pin To Net: NetName=CAP1.3 Pin=U2-15
+Added Pin To Net: NetName=VREG Pin=U2-16
+Added Pin To Net: NetName=CAP2.0 Pin=U2-17
+Added Pin To Net: NetName=CAP2.1 Pin=U2-18
+Added Pin To Net: NetName=RF_DISABLE Pin=U2-19
+Added Pin To Net: NetName=CAP3.1 Pin=U2-20
+Added Pin To Net: NetName=XOUT Pin=U2-21
+Added Pin To Net: NetName=XIN Pin=U2-22
+Added Pin To Net: NetName=GND Pin=U2-23
+Added Pin To Net: NetName=VCC Pin=U2-24
+Added Pin To Net: NetName=GND Pin=U2-25
+Added Member To Class: ClassName=Main Member=Component U2 MSP430FR2532IRGET
