@@ -15,7 +15,7 @@ LifeCycleDefinitionGUID=
 RevisionNamingSchemeGUID=
 
 [OutputGroup1]
-Name=YAPCBBC.OutJob
+Name=Enchante.OutJob
 Description=
 TargetOutputMedium=PDF
 VariantName=[No Variations]
@@ -50,7 +50,7 @@ Configuration1_Item1=Record=SchPrintView|ShowNoERC=True|ShowParamSet=True|ShowPr
 OutputType2=PCB Print
 OutputName2=PCB Prints
 OutputCategory2=Documentation
-OutputDocumentPath2=YAPCBBC.PcbDoc
+OutputDocumentPath2=Enchante.PcbDoc
 OutputVariantName2=
 OutputEnabled2=1
 OutputEnabled2_OutputMedium1=0
@@ -87,7 +87,7 @@ PcbPrintPreferences2=
 OutputType3=PCB 3D Print
 OutputName3=PCB 3D Print - Top
 OutputCategory3=Documentation
-OutputDocumentPath3=YAPCBBC.PcbDoc
+OutputDocumentPath3=Enchante.PcbDoc
 OutputVariantName3=
 OutputEnabled3=1
 OutputEnabled3_OutputMedium1=0
@@ -101,7 +101,7 @@ Configuration3_Item1=Record=Pcb3DPrintView|ResX=300|ResY=300|ViewX=46562992|View
 OutputType4=PCB 3D Print
 OutputName4=PCB 3D Print - Bottom
 OutputCategory4=Documentation
-OutputDocumentPath4=YAPCBBC.PcbDoc
+OutputDocumentPath4=Enchante.PcbDoc
 OutputVariantName4=
 OutputEnabled4=1
 OutputEnabled4_OutputMedium1=0
@@ -115,7 +115,7 @@ Configuration4_Item1=Record=Pcb3DPrintView|ResX=150|ResY=150|ViewX=30062992|View
 OutputType5=Gerber
 OutputName5=Gerber Files
 OutputCategory5=Fabrication
-OutputDocumentPath5=YAPCBBC.PcbDoc
+OutputDocumentPath5=Enchante.PcbDoc
 OutputVariantName5=
 OutputEnabled5=0
 OutputEnabled5_OutputMedium1=0
@@ -128,7 +128,7 @@ Configuration5_Item1=AddToAllLayerClasses.Set= |AddToAllPlots.Set=SerializeLayer
 OutputType6=NC Drill
 OutputName6=NC Drill Files
 OutputCategory6=Fabrication
-OutputDocumentPath6=YAPCBBC.PcbDoc
+OutputDocumentPath6=Enchante.PcbDoc
 OutputVariantName6=
 OutputEnabled6=0
 OutputEnabled6_OutputMedium1=0
@@ -140,17 +140,17 @@ Configuration6_Name1=OutputConfigurationParameter1
 Configuration6_Item1=BoardEdgeRoutToolDia=2000000|GenerateBoardEdgeRout=False|GenerateDrilledSlotsG85=False|GenerateEIADrillFile=False|GenerateSeparatePlatedNonPlatedFiles=False|NumberOfDecimals=5|NumberOfUnits=2|OptimizeChangeLocationCommands=True|OriginPosition=Relative|Record=DrillView|Units=Imperial|ZeroesMode=SuppressLeadingZeroes
 
 [PublishSettings]
-OutputFilePath2=C:\Users\Badr\Desktop\EE\YAPCBBC\Project Outputs for YAPCBBC\YAPCBBC.pdf
+OutputFilePath2=C:\Users\Badr\Desktop\EE\YAPCBBC\Project Outputs for Enchante\YAPCBBC.pdf
 ReleaseManaged2=1
-OutputBasePath2=Project Outputs for YAPCBBC
+OutputBasePath2=Project Outputs for Enchante
 OutputPathMedia2=
 OutputPathMediaValue2=
 OutputPathOutputer2=[Output Type]
 OutputPathOutputerPrefix2=
 OutputPathOutputerValue2=
-OutputFileName2=YAPCBBC.pdf
+OutputFileName2=Enchante.pdf
 OutputFileNameMulti2=
-UseOutputNameForMulti2=1
+UseOutputNameForMulti2=0
 OutputFileNameSpecial2=
 OpenOutput2=1
 PromptOverwrite2=1
@@ -167,7 +167,7 @@ ShowComponentParameters2=1
 GlobalBookmarks2=0
 OutputFilePath3=C:\Users\Badr\Desktop\EE\YAPCBBC\Project Outputs for YAPCBBC\
 ReleaseManaged3=1
-OutputBasePath3=Project Outputs for YAPCBBC
+OutputBasePath3=Project Outputs for Enchante
 OutputPathMedia3=
 OutputPathMediaValue3=
 OutputPathOutputer3=[Output Type]
@@ -180,7 +180,7 @@ OutputFileNameSpecial3=
 OpenOutput3=1
 OutputFilePath4=
 ReleaseManaged4=1
-OutputBasePath4=Project Outputs for YAPCBBC
+OutputBasePath4=Project Outputs for Enchante
 OutputPathMedia4=
 OutputPathMediaValue4=
 OutputPathOutputer4=[Output Type]
@@ -217,7 +217,7 @@ WmvVideoCodecName4=Windows Media Video V7
 WmvQuality4=80
 
 [GeneratedFilesSettings]
-RelativeOutputPath2=C:\Users\Badr\Desktop\EE\YAPCBBC\Project Outputs for YAPCBBC\YAPCBBC.pdf
+RelativeOutputPath2=C:\Users\Badr\Desktop\EE\YAPCBBC\Project Outputs for Enchante\YAPCBBC.pdf
 OpenOutputs2=1
 RelativeOutputPath3=C:\Users\Badr\Desktop\EE\YAPCBBC\Project Outputs for YAPCBBC\
 OpenOutputs3=1
