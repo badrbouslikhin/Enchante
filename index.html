@@ -1,0 +1,220 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Enchante by MrZeroo00</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Enchante</h1>
+        <p>Echanté is my personnal PCB business card</p>
+
+        <p class="view"><a href="https://github.com/MrZeroo00/Enchante">View the Project on GitHub <small>MrZeroo00/Enchante</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/MrZeroo00/Enchante/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/MrZeroo00/Enchante/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/MrZeroo00/Enchante">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="enchanté" class="anchor" href="#enchant%C3%A9" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Enchanté</h1>
+
+<p>Enchanté is my personal PCB business card. It has been designed to show some of my skills while looking for a job. </p>
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/MrZeroo00/Enchante/master/Images/Enchante-side.png" alt="Enchanté top view" width="" height="">
+</p>
+
+<p>The small board (77 x 55 mm) features a capacitive touch sensor (iPod wheel style), some LEDs for animation and interaction with the touch sensor and an <a href="http://www.st.com/content/st_com/en/products/nfc/st25-nfc-rfid-tags-readers/dynamic-nfc-tags/m24sr-series-dynamic-nfc-tags/m24sr04-y.html">NFC chip</a> with an onboard PCB loop antenna. The NFC will probably open the browser with my LinkedIn profile or add my contact info the phone's address book (WIP).
+The bonus feature is a PCB reference on the back of the board (only footprints, no component will be soldered) with:</p>
+
+<ul>
+<li>Resistor/capacitor/inductor/diode footprints</li>
+<li>Common surface mount component footprints</li>
+<li>Common electrical symbols</li>
+<li>Common conversions</li>
+<li>Trace size comparison</li>
+<li>Font size comparison</li>
+</ul>
+
+<p>Hopefully this will be useful for EEs and will save this business card from ending up in the trash.</p>
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/MrZeroo00/Enchante/master/Images/Enchante-bottom.png" alt="Enchanté top view" width="" height="250">
+</p>
+
+<p>A TI <a href="http://www.ti.com/product/MSP430FR2532/technicaldocuments">MSP430</a> microcontroller with CapTIvate touch technology capability handles all the touch functionalities and LED control.
+There is a connectorless programming adapter. Just a few exposed pads to do all the programming without having pin headers onboard, this makes the card much easier to carry around.</p>
+
+<p>The board is powered by a 3V CR2032 coin cell battery. A <a href="http://www.ti.com/product/TLV61225">Boost</a> converter is available to provide a stable 3.3V over the battery’s operating range. This enables energy-harvesting and optimizes the power efficiency.</p>
+
+<p>This board is also a playground for me to learn about technologies I'm not familiar with, specifically NFC. 
+The first version of this business card is very expensive. For ten units, the total cost per board is ~11.6$ and can be as low as ~10$ if the boost converter is not populated (which is possible in the schematic).
+The BOM cost is ~8$ and the PCB is ~3.6$ (ordered on <a href="https://www.elecrow.com/">Elecrow</a>). A detailed BOM is <a href="https://docs.google.com/spreadsheets/d/1eNP5zuFRfIdvhxHwnxUuVc3rJX5olWzpR0HwWWoFab0/edit?usp=sharing">available here</a>.
+One of the goals for the next iteration would be to make it much cheaper.</p>
+
+<h2>
+<a id="directory-structure" class="anchor" href="#directory-structure" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Directory Structure</h2>
+
+<p>This repository contains the hardware sources of the board. Although made with Altium Designer, the schematic is available in PDF and the layout is available in Gerber. 
+I do not plan to convert the files to KiCad/Eagle at the moment but there are <a href="https://github.com/thesourcerer8/altium2kicad">some converters</a> you can use.</p>
+
+<pre><code>Enchanté
+├── Antenna generation -- OpenSCAD scripts to generate the DXF of the NFC loop antenna
+├── Board shape -- OpenSCAD scripts to generate the DXF of the board's shape
+├── Enchante.OutJob
+├── Enchante.PcbDoc -- PCB Layout
+├── Enchante.PrjPcb
+├── Enchante.PrjPcbStructure
+├── Enchante.SchDoc -- Schematic
+├── Images -- Images for the README
+├── Librairies -- Altium component libraries
+└── Project Outputs for Enchante
+    ├── Enchante.pdf -- PDF Schematic, layout 2D/3D view
+    ├── Enchante_BOM.xls -- BOM
+    ├── Gerber -- Gerber fabrication files
+    └── NC Drill -- Drill fabrication files
+</code></pre>
+
+<h2>
+<a id="hardware-source-files" class="anchor" href="#hardware-source-files" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Hardware source files</h2>
+
+<h3>
+<a id="schematic" class="anchor" href="#schematic" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Schematic</h3>
+
+<p><a href="https://raw.githubusercontent.com/MrZeroo00/Enchante/master/Images/Enchante-schematic.png"><img src="https://raw.githubusercontent.com/MrZeroo00/Enchante/master/Images/Enchante-schematic.png" alt="alt text" title="Enchanté's Schematics"></a></p>
+
+<h3>
+<a id="layout" class="anchor" href="#layout" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Layout</h3>
+
+<p><a href="https://raw.githubusercontent.com/MrZeroo00/Enchante/master/Images/Enchante-multi-layout.png"><img src="https://raw.githubusercontent.com/MrZeroo00/Enchante/master/Images/Enchante-multi-layout.png" alt="alt text" title="Enchanté's Layout"></a></p>
+
+<ul>
+<li>Green: top overlay </li>
+<li>Red: top copper</li>
+<li>Blue: bottom copper</li>
+<li>Yellow: bottom overlay</li>
+</ul>
+
+<h2>
+<a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Documentation</h2>
+
+<h3>
+<a id="antenna-design" class="anchor" href="#antenna-design" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Antenna Design</h3>
+
+<p>NFC (radio-frequency identification) tags extract all of their power from the reader’s field. The tags’ and reader’s antennas form a system of coupled inductances. The loop antenna of the tag (this board) acts as a transformer’s secondary.
+The design principle of the NFC antenna is simple: the external antenna inductance (Lantenna) that needs to be designed on board the PCB should match the NFC chip internal tuning capacitance (Ctuning) in order to create a circuit resonating at 13.56 MHz:</p>
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/MrZeroo00/Enchante/master/Images/Tuning_eq.png" alt="Tuning frequency" width="" height="40">
+</p>
+
+<p>The full equations are available in ST's application notes <a href="http://www.st.com/content/ccc/resource/technical/document/application_note/bc/ac/13/fe/69/fb/49/8a/CD00232630.pdf/files/CD00232630.pdf/jcr:content/translations/en.CD00232630.pdf">AN2972</a> and <a href="http://www.proxmark.org/files/Documents/Antennas/How%20to%20design%20a%2013.56%20MHz%20customized%20tag%20antenna.pdf">AN2866</a> and TI's application note <a href="http://www.ti.com/lit/an/sloa197/sloa197.pdf">SLOA197</a>.
+The antenna fine tuning is done by adjusting the antenna resonance frequency. The parallel capacitors C12 is added to bring the resonance frequency close to 13.56 MHz. C13 &amp; C14 are part of the matching network.
+A resistor R7 is added to tune the Quality factor if needed (should be Q &lt; 50).
+In this case, the calculated target inductance is 5.398 uH. 
+The next step is to choose the shape of the antenna and determine its physical dimensions. A rectangular loop seems to be the usual shape for this type of design. ST provides an <a href="https://my.st.com/analogsimulator/flex_app/bin/eds_antenna_design.html?msg=%7B%22action%22:%22new_design%22%7D">online tool</a> to help with the math:
+<img src="https://raw.githubusercontent.com/MrZeroo00/Enchante/master/Antenna%20generation/eDesignSuite.png" alt="ST eDesignSuite">
+Now we need to create the component in the ECAD software (Altium Designer in this case). I was very surprised to find no integrated/easy way to do this. My workflow for this step is as follows:</p>
+
+<ol>
+<li>Create a DXF with the above geometry</li>
+<li>Import the DXF in Altium Designer, add vias and create a component</li>
+</ol>
+
+<p>To create the DXF with this geometry, I wrote an <a href="https://github.com/MrZeroo00/Enchante/blob/master/Antenna%20generation/loop_antenna_generator.scad">OpenSCAD script</a> to handle the job. It takes the following parameters and generates an STL of the desired geometry:</p>
+
+<pre><code>// Geometry
+loops = 12;
+length = 29.6;
+width = 30;
+copper_width = 0.3;
+copper_spacing = 0.3;
+thickness = 0.03556;
+</code></pre>
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/MrZeroo00/Enchante/master/Images/openscad_antenna_generator.png" alt="OpenSCAD antenna generation script">
+</p>
+
+<p>The next step is to convert the STL to a 2D object and generate a DXF, this is handled by <a href="https://raw.githubusercontent.com/MrZeroo00/Enchante/master/Antenna%20generation/stl2dxf.scad">another OpenSCAD script</a>.
+The DXF is then imported in Altium Designer and the component is created by adding two vias to both ends of the antenna. The result in <a href="https://github.com/MrZeroo00/Enchante/raw/master/Librairies/NFC_Antenna/Project%20Outputs%20for%20NFC_Antenna/NFC_Antenna.IntLib">this Altium Integrated Library.</a>
+This maybe overcomplicated, if you find a better way of doing it, please shoot me an <a href="mailto:bouslikhin.badr@gmail.com">email</a>!</p>
+
+<p>There should be no copper near and especially under the antenna! I used a Polygon Pour coutout on both layers to keep the polygons pour from the desired region.</p>
+
+<h3>
+<a id="capacitive-sensor-design" class="anchor" href="#capacitive-sensor-design" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Capacitive Sensor Design</h3>
+
+<p>Capacitive sensing performs a measurement to detect a capacitive change to a sensor element. A sensor element can be any conductive material (copper PCB plane, a wire, etc.) and the change is due to human interaction, such as a finger, ear, or hand. A touch causes the capacitance of the electrode to increase (typically 1-10pF).
+Although expensive, the <a href="http://www.ti.com/product/MSP430FR2532/technicaldocuments">TI MSP430FR2532</a> microcontroller features CapTIvate touch technology for buttons, sliders, wheels (BSW), and proximity applications. This MCU has hardware blocks dedicated to this measurement hence making it much easier for me.</p>
+
+<p>This technology uses Charge transfer technique to measure a change in capacitance. 
+Since we are interested in the change in capacitance and not the absolute value, the basic principle of this technique relies on charge transfer between two capacitors: an unknown capacitor Ctouch we are trying to monitor and a know capacitor Cref (larger enough, ~ tens of pF). Ctouch is filled (charged) and then emptied (transferred) into the Cref. The number of times it takes to fill the Cref is representative of the capacitance of the Ctouch. <strong>If the number of times it takes to fill Cref changes, then the capacitance of Ctouch has changed.</strong>
+Further information can be found in TI's <a href="http://software-dl.ti.com/msp430/msp430_public_sw/mcu/msp430/CapTIvate_Design_Center/latest/exports/docs/users_guide/html/index.html">CapTIvate™ Technology Guide</a>.</p>
+
+<p>I chose to implement a wheel and a touch button in the middle. The first complexity of this type of implementation comes from the design of the sensor. In this case I used a spatially interpolated wheel with 3 electrodes connected to 3 different sensing channels of the MCU. </p>
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/MrZeroo00/Enchante/master/Images/wheel_example_atmel.png" alt="Example of a 3 channels wheel">
+</p>
+
+<p>The geometry is once again not trivial to draw in ECAD software. There are few options to do so:</p>
+
+<ol>
+<li>Use OpenSCAD again and import the DXF into Altium to create the component. This approach has been realized in <a href="https://bryanduxbury.com/2013/12/05/designing-a-capacitive-touch-wheel-in-openscad-and-eagle/">this design</a>.</li>
+<li>Use <a href="https://techdocs.altium.com/display/ADOH/Support+for+Atmel+Touch+Controls">Atmel's touch library</a> add-on to Altium.</li>
+<li>Copy paste the sensor from TI's <a href="http://www.ti.com/tool/msp-capt-fr2633">CapTIvate reference design</a>. </li>
+</ol>
+
+<p>The lazy me chose the third option. I only resized the component to meet my needs.</p>
+
+<p>The other touch electrode is a simple button consisting of a copper pad and a via to connect it to the MCU. This one was easy to implement.</p>
+
+<p>Ground planes are necessary to shield the design and protect it from radiated and conducted interference. This is conflicting with the need to minimize the parasitic capacitance (the sensor's sensitivity increases with the decrease of the parasitic capacitance) between the electrode and the ground pour. This is why on the bottom layer, the ground pour is hatched.</p>
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/MrZeroo00/Enchante/master/Images/bottom_ground_pour.png" alt="Hatched ground pour on the bottom layer" width="" height="250">
+</p>
+
+<p>It is also recommended leaving 4 mm between the capacitive touch trace and any digital signal/ground pour to minimize coupling. </p>
+
+<h3>
+<a id="hardware-validation" class="anchor" href="#hardware-validation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Hardware validation</h3>
+
+<blockquote>
+<p>WIP</p>
+</blockquote>
+
+<p>I'm still waiting for the boards to come back from the fab house. Afterwards I will hand-solder a few boards an start validating.</p>
+
+<h3>
+<a id="software" class="anchor" href="#software" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Software</h3>
+
+<blockquote>
+<p>WIP</p>
+</blockquote>
+
+<p>For any further information or inquiry, please contact <a href="mailto:bouslikhin.badr@gmail.com">bouslikhin.badr[at]gmail[dot]com</a></p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/MrZeroo00">MrZeroo00</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
