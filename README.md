@@ -129,7 +129,7 @@ It is also recommended leaving 4 mm between the capacitive touch trace and any d
 
 > WIP
 
-I'm still waiting for the boards to come back from the fab house. Afterwards I will hand-solder a few boards an start validating.
+I'm still waiting for the boards to come back from the fab house. Afterwards I will hand-solder a few boards and start validating.
 ###Software
 > WIP
 
