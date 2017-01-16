@@ -1,0 +1,8 @@
+title: Enchante
+description: Enchanté - PCB business card
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-minimal
+
+gems:
+  - jekyll-mentions
