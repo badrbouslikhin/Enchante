@@ -126,11 +126,12 @@ Ground planes are necessary to shield the design and protect it from radiated an
 It is also recommended leaving 4 mm between the capacitive touch trace and any digital signal/ground pour to minimize coupling. 
 
 ### Hardware validation
+> Done
 
-> WIP
-
-I'm still waiting for the boards to come back from the fab house. Afterwards I will hand-solder a few boards and start validating.
+The boards work perfectly! More details to come here.
 ###Software
-> WIP
+> Done
+
+Code and details coming soon!
 
 For any further information or inquiry, please contact [bouslikhin.badr[at]gmail[dot]com](mailto:bouslikhin.badr@gmail.com)
