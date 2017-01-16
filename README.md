@@ -1,10 +1,10 @@
 # Enchanté
-Enchanté is my personal PCB business card. It has been designed to show some of my skills while looking for a job. 
+**Enchanté is my personal PCB business card.** It has been designed to show some of my skills while looking for a job. 
 <p align="center">
 <img src="https://raw.githubusercontent.com/MrZeroo00/Enchante/master/Images/Enchante-side.png" alt="Enchanté top view" width="" height="">
 </p>
-The small board (77 x 55 mm) features a capacitive touch sensor (iPod wheel style), some LEDs for animation and interaction with the touch sensor and an [NFC chip](http://www.st.com/content/st_com/en/products/nfc/st25-nfc-rfid-tags-readers/dynamic-nfc-tags/m24sr-series-dynamic-nfc-tags/m24sr04-y.html) with an onboard PCB loop antenna. The NFC will probably open the browser with my LinkedIn profile or add my contact info the phone's address book (WIP).
-The bonus feature is a PCB reference on the back of the board (only footprints, no component will be soldered) with:
+The small board (77 x 55 mm) features a **capacitive touch sensor (iPod wheel style)**, some **LEDs for animation and interaction with the touch sensor** and an [**NFC chip**](http://www.st.com/content/st_com/en/products/nfc/st25-nfc-rfid-tags-readers/dynamic-nfc-tags/m24sr-series-dynamic-nfc-tags/m24sr04-y.html) with an **onboard PCB loop antenna**. The NFC will opens the browser with my LinkedIn profile and add my contact info the phone's address book.
+The bonus feature is a **PCB reference on the back of the board** (only footprints, no component will be soldered) with:
 
 - Resistor/capacitor/inductor/diode footprints
 - Common surface mount component footprints
