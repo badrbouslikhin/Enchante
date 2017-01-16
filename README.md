@@ -133,5 +133,6 @@ The boards work perfectly! More details to come here.
 ###Software
 > Done
 
-Done. Code and details coming soon.
+Code and details coming soon!
+
 For any further information or inquiry, please contact [bouslikhin.badr[at]gmail[dot]com](mailto:bouslikhin.badr@gmail.com)
