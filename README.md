@@ -3,6 +3,7 @@
 <p align="center">
 <img src="https://raw.githubusercontent.com/MrZeroo00/Enchante/master/Images/Enchante-side.png" alt="Enchanté top view" width="" height="">
 </p>
+
 The small board (77 x 55 mm) features a **capacitive touch sensor (iPod wheel style)**, some **LEDs for animation and interaction with the touch sensor** and an [**NFC chip**](http://www.st.com/content/st_com/en/products/nfc/st25-nfc-rfid-tags-readers/dynamic-nfc-tags/m24sr-series-dynamic-nfc-tags/m24sr04-y.html) with an **onboard PCB loop antenna**. The NFC will opens the browser with my LinkedIn profile and add my contact info the phone's address book.
 The bonus feature is a **PCB reference on the back of the board** (only footprints, no component will be soldered) with:
 
@@ -17,6 +18,7 @@ Hopefully this will be useful for EEs and will save this business card from endi
 <p align="center">
 <img src="https://raw.githubusercontent.com/MrZeroo00/Enchante/master/Images/Enchante-bottom.png" alt="Enchanté top view" width="" height="250">
 </p>
+
 A TI [MSP430](http://www.ti.com/product/MSP430FR2532/technicaldocuments) microcontroller with CapTIvate touch technology capability handles all the touch functionalities and LED control.
 There is a connectorless programming adapter. Just a few exposed pads to do all the programming without having pin headers onboard, this makes the card much easier to carry around.
 
@@ -47,15 +49,17 @@ I do not plan to convert the files to KiCad/Eagle at the moment but there are [s
         ├── Gerber -- Gerber fabrication files
         └── NC Drill -- Drill fabrication files
 
+
 ## Hardware source files
 ### Schematic
-[![alt text][2]][1]
-  [1]: https://raw.githubusercontent.com/MrZeroo00/Enchante/master/Images/Enchante-schematic.png
-  [2]: https://raw.githubusercontent.com/MrZeroo00/Enchante/master/Images/Enchante-schematic.png (Enchanté's Schematics)
+<p align="center">
+<img src="https://raw.githubusercontent.com/MrZeroo00/Enchante/master/Images/Enchante-schematic.png" alt="Enchanté's schematic" width="" height="250">
+</p>
+
 ### Layout
-[![alt text][3]][4]
-  [4]: https://raw.githubusercontent.com/MrZeroo00/Enchante/master/Images/Enchante-multi-layout.png
-  [3]: https://raw.githubusercontent.com/MrZeroo00/Enchante/master/Images/Enchante-multi-layout.png (Enchanté's Layout)
+<p align="center">
+<img src="https://raw.githubusercontent.com/MrZeroo00/Enchante/master/Images/Enchante-multi-layout.png" alt="Enchanté's layout view" width="" height="250">
+</p>
   
  - Green: top overlay 
  - Red: top copper
@@ -69,6 +73,7 @@ The design principle of the NFC antenna is simple: the external antenna inductan
 <p align="center">
 <img src="https://raw.githubusercontent.com/MrZeroo00/Enchante/master/Images/Tuning_eq.png" alt="Tuning frequency" width="" height="40">
 </p>
+
 The full equations are available in ST's application notes [AN2972](http://www.st.com/content/ccc/resource/technical/document/application_note/bc/ac/13/fe/69/fb/49/8a/CD00232630.pdf/files/CD00232630.pdf/jcr:content/translations/en.CD00232630.pdf) and [AN2866](http://www.proxmark.org/files/Documents/Antennas/How%20to%20design%20a%2013.56%20MHz%20customized%20tag%20antenna.pdf) and TI's application note [SLOA197](http://www.ti.com/lit/an/sloa197/sloa197.pdf).
 The antenna fine tuning is done by adjusting the antenna resonance frequency. The parallel capacitors C12 is added to bring the resonance frequency close to 13.56 MHz. C13 & C14 are part of the matching network.
 A resistor R7 is added to tune the Quality factor if needed (should be Q < 50).
@@ -92,24 +97,26 @@ To create the DXF with this geometry, I wrote an [OpenSCAD script](https://githu
 <p align="center">
 <img src="https://raw.githubusercontent.com/MrZeroo00/Enchante/master/Images/openscad_antenna_generator.png" alt="OpenSCAD antenna generation script">
 </p>
+
 The next step is to convert the STL to a 2D object and generate a DXF, this is handled by [another OpenSCAD script](https://raw.githubusercontent.com/MrZeroo00/Enchante/master/Antenna%20generation/stl2dxf.scad).
 The DXF is then imported in Altium Designer and the component is created by adding two vias to both ends of the antenna. The result in [this Altium Integrated Library.](https://github.com/MrZeroo00/Enchante/raw/master/Librairies/NFC_Antenna/Project%20Outputs%20for%20NFC_Antenna/NFC_Antenna.IntLib)
-This maybe overcomplicated, if you find a better way of doing it, please shoot me an [email](mailto:bouslikhin.badr@gmail.com)!
+This is maybe overcomplicated, if you find a better way of doing it, please shoot me an [email](mailto:bouslikhin.badr@gmail.com)!
 
-There should be no copper near and especially under the antenna! I used a Polygon Pour coutout on both layers to keep the polygons pour from the desired region.
+There should be no copper near and especially under the antenna! I used a Polygon Pour cutout on both layers to keep the polygons pours from the desired region.
 ### Capacitive Sensor Design
 Capacitive sensing performs a measurement to detect a capacitive change to a sensor element. A sensor element can be any conductive material (copper PCB plane, a wire, etc.) and the change is due to human interaction, such as a finger, ear, or hand. A touch causes the capacitance of the electrode to increase (typically 1-10pF).
 Although expensive, the [TI MSP430FR2532](http://www.ti.com/product/MSP430FR2532/technicaldocuments) microcontroller features CapTIvate touch technology for buttons, sliders, wheels (BSW), and proximity applications. This MCU has hardware blocks dedicated to this measurement hence making it much easier for me.
 
 This technology uses Charge transfer technique to measure a change in capacitance. 
-Since we are interested in the change in capacitance and not the absolute value, the basic principle of this technique relies on charge transfer between two capacitors: an unknown capacitor Ctouch we are trying to monitor and a know capacitor Cref (larger enough, ~ tens of pF). Ctouch is filled (charged) and then emptied (transferred) into the Cref. The number of times it takes to fill the Cref is representative of the capacitance of the Ctouch. **If the number of times it takes to fill Cref changes, then the capacitance of Ctouch has changed.**
+Since we are interested in the change in capacitance and not the absolute value, the basic principle of this technique relies on a charge transfer between two capacitors: an unknown capacitor Ctouch we are trying to monitor and a know capacitor Cref (larger enough, ~ tens of pF). Ctouch is filled (charged) and then emptied (transferred) into the Cref. The number of times it takes to fill the Cref is representative of the capacitance of the Ctouch. **If the number of times it takes to fill Cref changes, then the capacitance of Ctouch has changed.**
 Further information can be found in TI's [CapTIvate™ Technology Guide](http://software-dl.ti.com/msp430/msp430_public_sw/mcu/msp430/CapTIvate_Design_Center/latest/exports/docs/users_guide/html/index.html).
 
 I chose to implement a wheel and a touch button in the middle. The first complexity of this type of implementation comes from the design of the sensor. In this case I used a spatially interpolated wheel with 3 electrodes connected to 3 different sensing channels of the MCU. 
 <p align="center">
 <img src="https://raw.githubusercontent.com/MrZeroo00/Enchante/master/Images/wheel_example_atmel.png" alt="Example of a 3 channels wheel">
 </p>
-The geometry is once again not trivial to draw in ECAD software. There are few options to do so:
+
+The geometry is not trivial to draw in ECAD software. There are few options to do so:
 
  1. Use OpenSCAD again and import the DXF into Altium to create the component. This approach has been realized in [this design](https://bryanduxbury.com/2013/12/05/designing-a-capacitive-touch-wheel-in-openscad-and-eagle/).
  2. Use [Atmel's touch library](https://techdocs.altium.com/display/ADOH/Support+for+Atmel+Touch+Controls) add-on to Altium.
@@ -123,6 +130,7 @@ Ground planes are necessary to shield the design and protect it from radiated an
 <p align="center">
 <img src="https://raw.githubusercontent.com/MrZeroo00/Enchante/master/Images/bottom_ground_pour.png" alt="Hatched ground pour on the bottom layer" width="" height="250">
 </p>
+
 It is also recommended leaving 4 mm between the capacitive touch trace and any digital signal/ground pour to minimize coupling. 
 
 ### Hardware validation
@@ -130,9 +138,10 @@ It is also recommended leaving 4 mm between the capacitive touch trace and any d
 > Done
 
 The boards work perfectly! More details to come here.
-###Software
+
+### Software
 > Done
 
 Code and details coming soon!
 
-For any further information or inquiry, please contact [bouslikhin.badr[at]gmail[dot]com](mailto:bouslikhin.badr@gmail.com)
+For any further information or inquiry, shoot me an email [bouslikhin.badr[at]gmail[dot]com](mailto:bouslikhin.badr@gmail.com)
